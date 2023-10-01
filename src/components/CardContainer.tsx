@@ -8,7 +8,11 @@ function CardContainer(props: ICardContainerProps) {
             <div className="row">
                 {props.items.map(item =>
                     <Card as={Link} to={item.toLowerCase()} key={item} className="col-sm m-1 cursor-pointer">
-                        <Card.Img variant="top" src={'/src/assets/' + item.toLowerCase() + '.svg'} onError={(e: any) => e.target.src = '/src/assets/react.svg'} />
+                        <Card.Img
+                            variant="top"
+                            src={'/src/assets/' + item.toLowerCase() + '.svg'}
+                            onError={(e: any) => e.target.src = '/src/assets/react.svg'}
+                        />
                         <Card.Body>
                             <Card.Title>{item}</Card.Title>
                         </Card.Body>

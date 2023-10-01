@@ -1,5 +1,7 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import Login from "../auth/Login"
+import Register from "../auth/Register"
 
 function Header(props: IHeaderProps) {
     return (
@@ -10,9 +12,15 @@ function Header(props: IHeaderProps) {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         {props.links.map(link =>
-                            <Nav.Link as={Link} to={link === 'Home' ? '/' : link.toLowerCase()} key={link}>{link}</Nav.Link>
+                            <Nav.Link
+                                as={Link}
+                                to={link === 'Home' ? '/' : link.toLowerCase()}
+                                key={link}>{link}
+                            </Nav.Link>
                         )}
                     </Nav>
+                    <Login />
+                    <Register />
                 </Navbar.Collapse>
             </Container>
         </Navbar>
